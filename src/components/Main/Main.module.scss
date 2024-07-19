@@ -1,0 +1,35 @@
+@import "../../utils/mixins.scss";
+
+.main {
+  margin: 0 auto;
+  @include flex-column-center;
+}
+.container {
+  width: 100%;
+}
+.inner {
+  @include flex-column-center;
+}
+.navigation {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+  align-self: flex-end;
+}
+.paintings {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+.pagination {
+  margin-bottom: 100px;
+}

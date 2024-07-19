@@ -1,0 +1,147 @@
+.select {
+  width: 100%;
+}
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.title {
+  font-family: "Cormorant+SC";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.5px;
+  user-select: none;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 19.3px;
+  }
+}
+.crosshair {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+.line {
+  border-top: 1.4px solid var(--color-gray);
+  width: 100%;
+  position: absolute;
+  transition: transform 0.2s ease-in-out;
+}
+.horizontal {
+  transform: rotate(0deg);
+}
+.vertical {
+  transform: rotate(90deg);
+}
+.selectWrapper {
+  position: relative;
+  height: 33px;
+  @media (min-width: 768px) {
+    height: 36px;
+  }
+
+  .arrow {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    transition: transform 0.2s ease-in-out;
+    .arrowSvg * {
+      fill: var(--color-gray-secondary);
+    }
+  }
+
+  .placeholder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding: 5px 5px 5px 15px;
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16.8px;
+    color: var(--color-gray);
+    background: var(--color-gray-input);
+    width: 100%;
+    @media (min-width: 768px) {
+      font-size: 14px;
+      line-height: 19.6px;
+    }
+  }
+
+  &[data-is-active="true"] .arrow {
+    transform: rotate(180deg);
+    top: 12px;
+  }
+
+  &[data-is-active="true"] .placeholder {
+    border: 1px solid var(--color-gray);
+  }
+
+  &:not([data-is-active="true"])
+    .placeholder:not([data-status="invalid"]):hover {
+    border: 1px solid var(--color-gray);
+  }
+
+  .select {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--color-gray-input);
+    max-height: 220px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      background: inherit;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-scroll);
+      width: 4px;
+      height: 100px;
+      border-radius: 5px;
+    }
+
+    .option {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 30px;
+      padding: 22px 5px 20px 15px;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 16.8px;
+      background-color: var(--color-gray-input);
+      color: var(--color-gray);
+      &:hover {
+        background-color: var(--color-input-hover);
+      }
+      @media (min-width: 768px) {
+        font-size: 14px;
+        line-height: 19.6px;
+      }
+    }
+    .noMatching {
+      color: rgba(156, 156, 156, 1);
+      cursor: default;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+  }
+}

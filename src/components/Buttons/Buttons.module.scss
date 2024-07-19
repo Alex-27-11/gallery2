@@ -1,0 +1,32 @@
+.buttons {
+  width: 100%;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    .button {
+      position: relative;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14.5px;
+      color: var(--color-gray);
+      text-decoration: underline;
+      text-transform: uppercase;
+      &:hover {
+        color: var(--color-button-hover);
+      }
+      .hideButtons {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    }
+    .buttonHide {
+      color: var(--color-gray-secondary);
+      &:hover {
+        color: var(--color-gray-secondary);
+      }
+    }
+  }
+}

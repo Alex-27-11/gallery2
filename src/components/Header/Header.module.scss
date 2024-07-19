@@ -1,0 +1,33 @@
+@import "../../utils/mixins.scss";
+
+.header {
+  @include flex-column-center;
+  background-color: var(--color-bg);
+  padding: 25px 0px 25px 0px;
+  @media (min-width: 768px) {
+    padding: 35px 0px 35px 0px;
+  }
+  @media (min-width: 1024px) {
+    padding: 30px 0px 30px 0px;
+  }
+  .inner {
+    @include flex-row-spBetween;
+    width: 100%;
+  }
+  .boxLogo {
+    width: 73px;
+    height: 16px;
+    @media (min-width: 1024px) {
+      width: 91px;
+      height: 20px;
+    }
+  }
+  .logo {
+  }
+  .btn {
+    width: 22px;
+    height: 22px;
+  }
+  .iconBtn {
+  }
+}
